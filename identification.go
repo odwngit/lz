@@ -68,6 +68,12 @@ func Identify(name string) FileIdentification {
 			id = FileIdentification{Ansi("Gray"), "{%} ", "Configuration File"}
 		case "pdf":
 			id = FileIdentification{Ansi("LightRed"), "(&) ", "PDF Document"}
+		case "png", "jpeg", "jpg", "webp", "gif", "bmp", "svg":
+			id = FileIdentification{Ansi("Green"), "_"+Ansi("Gray")+"."+Ansi("Yellow")+"*"+Ansi("Green")+"_", "Image File"}
+		case "mp3", "wav", "ogg":
+			id = FileIdentification{Ansi("Purple"), "."+Ansi("Pink")+":"+Ansi("LightRed")+"i"+Ansi("Yellow")+"|", "Audio File"}
+		case "mp4", "mov":
+			id = FileIdentification{Ansi("Gray"), "[%>"+Ansi("LightYellow")+"*", "Video File"}
 	}
 
 	return id
