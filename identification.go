@@ -67,7 +67,7 @@ func Identify(name string) FileIdentification {
 		case "cfg", "config", "ini":
 			id = FileIdentification{Ansi("Gray"), "{%} ", "Configuration File"}
 		case "pdf":
-			id = FileIdentification{Ansi("BrightRed"), "(&) ", "PDF Document"}
+			id = FileIdentification{Ansi("LightRed"), "(&) ", "PDF Document"}
 	}
 
 	return id
