@@ -62,6 +62,12 @@ func Identify(name string) FileIdentification {
 			id = FileIdentification{Ansi("LightBlue"), "|"+Ansi("LightGreen")+"\\"+Ansi("Green")+"| ", "Neovim Config"}
 		case "gz", "zip", "7z", "rar":
 			id = FileIdentification{Ansi("Red"), "0"+Ansi("Green")+"0"+Ansi("LightBlue")+"0 ", "Compressed Archive"}
+		case "lnk":
+			id = FileIdentification{Ansi("LightCyan"), "\\_/>", "Shortcut"}
+		case "cfg", "config", "ini":
+			id = FileIdentification{Ansi("Gray"), "{%} ", "Configuration File"}
+		case "pdf":
+			id = FileIdentification{Ansi("BrightRed"), "(&) ", "PDF Document"}
 	}
 
 	return id
