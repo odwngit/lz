@@ -47,7 +47,7 @@ func Identify(name string) FileIdentification {
 		case "cpp", "cc":
 			id = FileIdentification{Ansi("LightBlue"), "*C++", "C++"}
 		case "json":
-			id = FileIdentification{Ansi("Yellow"), "{;} ", "JSON"}
+			id = FileIdentification{Ansi("Yellow"), "{;} ", "Javascript Object Notation"}
 		case "py", "pyc", "ipynb":
 			id = FileIdentification{Ansi("LightBlue"), "&"+Ansi("Cyan")+"p"+Ansi("LightYellow")+"y"+Ansi("Yellow")+">", "Python"}
 		case "txt", "text":
@@ -74,6 +74,10 @@ func Identify(name string) FileIdentification {
 			id = FileIdentification{Ansi("Purple"), "."+Ansi("Pink")+":"+Ansi("LightRed")+"i"+Ansi("Yellow")+"|", "Audio File"}
 		case "mp4", "mov":
 			id = FileIdentification{Ansi("Gray"), "[%>"+Ansi("LightYellow")+"*", "Video File"}
+		case "toml":
+			id = FileIdentification{Ansi("Red"), "["+Ansi("Reset")+"T"+Ansi("Red")+"] ", "Tom's Obvious Markup Language"}
+		case "crt", "pem", "key", "cer", "cert":
+			id = FileIdentification{Ansi("White"), "["+Ansi("Blue")+"-"+Ansi("White")+"]"+Ansi("Yellow")+"*", "SSL Certificate File"}
 	}
 
 	return id
